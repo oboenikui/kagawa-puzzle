@@ -1,0 +1,42 @@
+.puzzle-container {
+    background: black;
+    position: fixed;
+}
+
+img.hole {
+    opacity: 0;
+}
+
+.puzzle-container .puzzle-row {
+    line-height: 0;
+}
+
+.puzzle-container .puzzle-row img {
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    outline-width: 2px;
+    outline-color: black;
+    outline-style: solid;
+    outline-offset: -2px;
+}
+
+.count-down {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 64px;
+    color: #000;
+    -webkit-text-stroke: 1px #FFF;
+    text-stroke: 1px #FFF;
+}
+
+.puzzle-container.completed img.hole {
+    opacity: 1;
+}
+
+.puzzle-container.completed img {
+    opacity: 1;
+    outline-width: 0px;
+}

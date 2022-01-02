@@ -1,0 +1,38 @@
+{
+    "$schema": "https://raw.githubusercontent.com/tundracom/json-schema-parser/master/src/test/resources/json/schema/parser/valid/chrome-manifest.json",
+    "manifest_version": 2,
+    "name": "香川県パズル",
+    "version": "0.1.0",
+    "description": "香川県サイトでプレイできるスライドパズルゲーム。条例対応済。",
+    "author": "oboenikui",
+    "permissions": [
+        "declarativeContent",
+        "tabs",
+        "activeTab",
+        "https://*.kagawa.lg.jp/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.kagawa.lg.jp/*"
+            ],
+            "js": [
+                "page.js"
+            ],
+            "css": [
+                "assets/puzzle.css"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_title": "香川パズル",
+        "default_popup": "popup.html"
+    }
+}
